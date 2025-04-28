@@ -27,7 +27,8 @@ Frontend: HTML/CSS (basic)
 Environment Management: dotenv (.env files)
 
 Project Structure
-/secure-auth-system/ ├── app.js
+/secure-auth-system/
+├── app.js
 ├── package.json
 ├── .env
 ├── views/
