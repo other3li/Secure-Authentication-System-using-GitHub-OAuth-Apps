@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #ff4b5c, #ff8e53);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            overflow: hidden;
+        }
+        .welcome-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 500px;
+            animation: fadeIn 1s ease;
+        }
+        .logout-btn {
+            background-color: #ff4b5c;
+            border: none;
+            padding: 10px 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: white;
+            border-radius: 10px;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+        .logout-btn:hover {
+            background-color: #e63b4a;
+            color: white;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        .datetime {
+            font-size: 1rem;
+            color: #6c757d;
+            margin-top: 10px;
+        }
+    </style>
+
+    <!-- خط Poppins الجميل -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="welcome-card">
+        <h2 class="text-danger mb-3">Hi {{ username }}, welcome to our project!</h2>
+        <p class="text-success fw-semibold mb-2">You have logged in successfully! 🚀</p>
+        <p id="datetime" class="datetime"></p>
+
+        <a href="{{ url_for('logout') }}" class="logout-btn mt-3">Logout</a>
+    </div>
+
+    <script>
+        const now = new Date();
+        const formattedDate = now.toLocaleString();
+        document.getElementById("datetime").innerText = formattedDate;
+    </script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
